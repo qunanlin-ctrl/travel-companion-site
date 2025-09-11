@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Travel Companion — 旅行陪伴管家招募 & 预约</title>
+<meta name="description" content="旅行陪伴管家 — 私人旅行顾问与陪伴服务。合规、专业、安全。加入我们或立即咨询预订。" />
+<link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+<style>
+  :root{--bg:#f7fbff;--accent:#0b77ff;--muted:#65748b;--card:#ffffff;--success:#0DBA7A;}
+  *{box-sizing:border-box}body{font-family: system-ui,-apple-system, "PingFang SC","Hiragino Sans GB", "Microsoft YaHei", Arial; margin:0; background:var(--bg); color:#0e1724; line-height:1.45}
+  .container{max-width:1100px;margin:0 auto;padding:24px;}
+  header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo .mark{width:48px;height:48px;background:linear-gradient(135deg,#0b77ff,#3fc1ff);border-radius:10px;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+  .nav a{margin-left:16px;color:var(--muted);text-decoration:none}
+  .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;margin-top:28px}
+  .hero h1{font-size:34px;margin:0 0 12px}
+  .hero p{color:var(--muted);margin:0 0 18px}
+  .btn{background:var(--accent);color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;display:inline-block}
+  .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+  .features{display:flex;gap:14px;margin-top:24px}
+  .feature{flex:1;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#f7fbff);border:1px solid rgba(11,119,255,0.06)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+  .section{margin-top:36px}
+  form label{display:block;font-weight:600;margin:6px 0 6px;color:#123}
+  input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;background:#fff;outline:none}
+  .small{font-size:13px;color:var(--muted)}
+  footer{margin-top:36px;padding:24px 0;color:var(--muted);font-size:13px;border-top:1px solid rgba(0,0,0,0.03)}
+  @media(max-width:900px){.hero{grid-template-columns:1fr;}.grid3{grid-template-columns:1fr}}
+  .success{background:var(--success);color:#fff;padding:10px;border-radius:8px;margin-top:12px;text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">
+      <div class="mark">TC</div>
+      <div><strong>Travel Companion</strong><div class="small">旅行陪伴管家</div></div>
+    </div>
+    <nav class="nav">
+      <a href="#services">服务</a>
+      <a href="#apply">招募</a>
+      <a href="#contact">联系我们</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>把旅行变成职业，也把陪伴做到专业</h1>
+        <p>旅行陪伴管家 —— 私人旅行顾问、旅拍管家与贴身陪伴。合规、职业、有保障。自由排班 · 收益分成 · 培训支持。</p>
+        <div style="display:flex;gap:12px;align-items:center">
+          <a class="btn" href="#apply">我要加入</a>
+          <a class="btn" style="background:#fff;color:var(--accent);border:1px solid rgba(11,119,255,0.12" href="#book">立即咨询</a>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <strong>安全合规</strong>
+            <div class="small">与正规旅行社合作，合同与保险保障</div>
+          </div>
+          <div class="feature">
+            <strong>自由收入</strong>
+            <div class="small">订单分成 30%-50%，接单自由</div>
+          </div>
+          <div class="feature">
+            <strong>培训支持</strong>
+            <div class="small">岗前与进阶培训，提升上座率</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="book">
+        <h3 style="margin-top:0">客户咨询 / 预订</h3>
+        <form id="bookForm" action="https://formspree.io/f/{your-id}" method="POST">
+          <label>姓名</label><input name="name" required />
+          <label>联系方式（电话/微信）</label><input name="contact" required />
+          <label>出行城市 & 时间</label><input name="when" placeholder="例如：2025-10-01 ~ 2025-10-05" />
+          <label>服务类型</label>
+          <select name="service">
+            <option>旅拍+陪伴（轻量）</option>
+            <option>亲子陪护+代拍</option>
+            <option>女性独行安全陪伴</option>
+            <option>定制高端管家服务</option>
+          </select>
+          <label>预算（可选）</label><input name="budget" placeholder="¥3000/人 起" />
+          <label>备注</label><textarea name="note" rows="3" placeholder="告诉我们你的需求"></textarea>
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <button class="btn" type="submit">提交咨询</button>
+            <button type="button" id="demoBtn" style="background:#f1f5fb;color:var(--accent);border-radius:8px;padding:10px 12px;border:none">演示提交</button>
+          </div>
+          <div id="bookMsg" style="display:none" class="success">提交成功！我们会在24小时内联系你。</div>
+        </form>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <h2>我们的服务（示例）</h2>
+      <div class="grid3">
+        <div class="card">
+          <h4>旅拍管家</h4>
+          <div class="small">专业拍照、场景规划、照片后期建议，记录你的独家旅程。</div>
+        </div>
+        <div class="card">
+          <h4>女性独行安全陪伴</h4>
+          <div class="small">为独行女性提供安全陪伴与夜间预警机制，优先两人制服务。</div>
+        </div>
+        <div class="card">
+          <h4>亲子陪护</h4>
+          <div class="small">儿童友好活动、亲子手工、旅途陪护，减轻父母负担。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply" class="section">
+      <h2>加入我们 — 旅行陪伴管家招募</h2>
+      <div style="display:grid;grid-template-columns:1fr 420px;gap:18px">
+        <div>
+          <p class="small">工作形式：兼职 / 自由职业 / 项目制 | 收益：分成制（30%~50%） | 培训：岗前与进阶</p>
+          <ul>
+            <li>工作内容：陪同客户、旅拍记录、行程协助、文化顾问（不做导游）</li>
+            <li>要求：年龄 20-40，形象佳，沟通能力强；具摄影/外语者优先</li>
+            <li>保障：平台派单、合同、行程保险</li>
+          </ul>
+          <p class="small">注意：本岗位明确禁止任何违法或逸出服务边界的行为；签约后须遵守服务规范。</p>
+        </div>
+        <div class="card">
+          <h4 style="margin-top:0">申请成为管家</h4>
+          <form id="applyForm" action="https://formspree.io/f/{your-id}" method="POST">
+            <label>姓名</label><input name="name" required />
+            <label>所在城市</label><input name="city" required />
+            <label>年龄</label><input name="age" type="number" />
+            <label>特长（摄影/语言/亲子等）</label><input name="skill" />
+            <label>联系方式（微信/电话）</label><input name="contact" required />
+            <label>简单自我介绍</label><textarea name="intro" rows="3"></textarea>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <button class="btn" type="submit">提交申请</button>
+              <button type="button" id="applyDemo" style="background:#f1f5fb;color:var(--accent);border-radius:8px;padding:10px 12px;border:none">演示提交</button>
+            </div>
+            <div id="applyMsg" style="display:none" class="success">申请已提交！我们会在72小时内联系你。</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <h2>常见问题</h2>
+      <div class="card">
+        <p><strong>问：</strong>旅行管家是不是导游？</p>
+        <p class="small"><strong>答：</strong>不是。旅行管家是私人助理/陪伴顾问，不从事景点讲解与团体导游工作，符合法规边界。</p>
+        <p><strong>问：</strong>费用如何结算？</p>
+        <p class="small"><strong>答：</strong>平台按订单分成结算，具体分成在合同中明确，支持微信/支付宝/银行卡支付（后续接入）。</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>联系我们</h2>
+      <div class="card">
+        <p>邮箱：<a href="mailto:hello@example.com">hello@example.com</a></p>
+        <p>电话：+86 138 0000 0000</p>
+        <p class="small">地址（办公）：XXX市XXX区（仅用于合同与法务沟通）</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Travel Companion — 旅行陪伴管家 · 合规服务</div>
+      <div class="small">注：本平台强调合规与安全。服务边界请参阅“服务说明”页。</div>
+    </footer>
+  </main>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+// demo buttons for offline testing
+document.getElementById('demoBtn').addEventListener('click', ()=> {
+  document.getElementById('bookMsg').style.display='block';
+  setTimeout(()=>document.getElementById('bookMsg').style.display='none',3000);
+});
+document.getElementById('applyDemo').addEventListener('click', ()=> {
+  document.getElementById('applyMsg').style.display='block';
+  setTimeout(()=>document.getElementById('applyMsg').style.display='none',3000);
+});
+// simple client validation could be added here
+</script>
+</body>
+</html>
